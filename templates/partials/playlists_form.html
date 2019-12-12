@@ -1,0 +1,21 @@
+{# templates/partials/playlists_form.html #}
+
+<fieldset>
+<legend>{{ title }}</legend>
+<div class='form-group'>
+    <label for='playlist-title'>Title</label><br>
+    <input id='playlist-title' type='text' name='title-input' value='{{ playlist.title }}'/>
+</div>
+<div class='form-group'>
+  <label for='description'>Description</label><br>
+  <input id='description' type='text' name='description-input' value='{{ playlist.description }}' />
+</div>
+<div class='form-group'>
+  <label for='playlist-videos'>Videos</label><br>
+  <p>Add videos in the form of 'https://youtube.com/embed/KEY'. Separate with a newline.</p>
+  <textarea id='playlist-videos' name='videos-input' rows='10' />{{ "\n".join(playlist.videos) }}</textarea>
+</div>
+<div class='form-group'>
+    <button class='btn btn-primary' type='submit'>Save Playlist</button>
+</div>
+</fieldset>

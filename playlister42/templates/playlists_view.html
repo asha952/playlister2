@@ -1,0 +1,16 @@
+{# templates/playlists_view.html #}
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% for playlist in playlists %}
+        <div class='col-md-3'>
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title"><a href='/playlists/{{ playlist._id }}'>{{playlist.title}}</a></h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{playlist.description}}</h6>
+              </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
